@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fct_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+  - name: fct_order_details
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_id
+            - order_detail_id
+
+    columns:
+      - name: order_detail_id
+        tests:
+          - not_null
+          - unique
