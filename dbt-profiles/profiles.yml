@@ -5,7 +5,7 @@ my_project:
       type: postgres
       threads: 1
       host: localhost
-      port: 5432
+      port: 5434
       user: postgres
       pass: pass
       dbname: store
